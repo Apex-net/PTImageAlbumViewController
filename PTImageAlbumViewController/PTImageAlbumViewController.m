@@ -125,7 +125,7 @@
 - (UIImage *)loadThumbnailImageAtIndex:(NSInteger)index
 {
     // Check in-memory cache for a previously saved image
-    UIImage *image = [self.thumbnailImageCache objectWithName:[NSString stringWithFormat:@"%d", index]];
+    UIImage *image = [self.thumbnailImageCache objectWithName:[NSString stringWithFormat:@"%ld", (long)index]];
     if (image == nil) {
         // We don't have thumbnail image yet, let's download it
         NSString *source = [self.imageAlbumView sourceForThumbnailImageAtIndex:index];
@@ -209,7 +209,7 @@
     // Let the photo album view know how large the photo will be once it's fully loaded.
     *originalPhotoDimensions = [self.imageAlbumView sizeForImageAtIndex:photoIndex];
     
-    UIImage *image = [self.highQualityImageCache objectWithName:[NSString stringWithFormat:@"%d", photoIndex]];
+    UIImage *image = [self.highQualityImageCache objectWithName:[NSString stringWithFormat:@"%ld", (long)photoIndex]];
     if (image) {
         *photoSize = NIPhotoScrollViewPhotoSizeOriginal;
     }

@@ -44,7 +44,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSString *)cacheKeyForPhotoIndex:(NSInteger)photoIndex {
-  return [NSString stringWithFormat:@"%d", photoIndex];
+  return [NSString stringWithFormat:@"%ld", (long)photoIndex];
 }
 
 
@@ -59,7 +59,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)identifierKeyFromIdentifier:(NSInteger)identifier {
-  return [NSNumber numberWithInt:identifier];
+  return [NSNumber numberWithInt:(int)identifier];
 }
 
 
